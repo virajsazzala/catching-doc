@@ -2,5 +2,5 @@ import app from './app.js';
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`server running at https://localhost:${PORT}`);
+    console.log(`server running on PORT: ${PORT}`);
 });
