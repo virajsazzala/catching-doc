@@ -11,6 +11,10 @@ export const identifyContact = async (req: Request, res: Response) => {
         return res.status(400).json({ error: 'Provide at least email or phoneNumber' });
     }
 
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return res.status(400).json({ error: 'Invalid email format' });
+    }
+
     const matches = await findMatches(email, phoneNumber);
     let primaryId: number;
 
