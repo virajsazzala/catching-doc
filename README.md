@@ -14,7 +14,8 @@ To solve this, we follow the below solution:
 4. create a relation if it doesn't exist
 5. update the linkedIds of the secondary records
 6. return the tracked relation as response
-
+7. (design choice) : instead of creation date for oldest account,\
+   we can use primary key (id), as it's an incremental int in this schema & always unique.
 ### Tech stack
 - NodeJS + TypeScript + Express + Prisma w/ PostgreSQL
 
